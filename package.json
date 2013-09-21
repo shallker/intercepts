@@ -1,0 +1,21 @@
+{
+  "name": "intercepts",
+  "description": "Intercepts event with `before` and `after`.",
+  "version": "0.0.1",
+  "author": "Shallker Wang <imshallker@gmail.com>",
+  "main": "index.js",
+  "keywords": [
+    "intercepts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shallker/intercepts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shallker/intercepts/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "license": "MIT"
+}
