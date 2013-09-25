@@ -19,7 +19,7 @@ function Users() {
   f(this.intercepts)
 
   this.create = function (data, callback, onError) {
-    this.intercepts('create', arguments, create)
+    this.intercepts('create', arguments, create, onError)
 
     function create(done) {
       log('create data', data)
@@ -36,18 +36,23 @@ function Users() {
 
 var users = new Users
 
-users.before('create', function (done) {
-  log('before create', this)
+users.before('create', function (done, error) {
+  log('before create 1', this)
 
   var data = this[0]
   eq(data.name, 'jack')
   eq(data.age, 20)
   data.age = 21
-
   done()
 })
 
-users.after('create', function (done) {
+users.before('create', function (done, error) {
+  log('before create 2', this)
+
+  error(new Error('error message'))
+})
+
+users.after('create', function (done, error) {
   log('after create', this)
 
   var data = this[0]
